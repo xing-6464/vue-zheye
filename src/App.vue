@@ -1,47 +1,38 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import logo from './assets/logo.svg'
+import type { ColumnProps } from './components/types'
+import ColumnList from './components/ColumnList.vue'
+const testData: ColumnProps[] = [
+  {
+    id: 1,
+    title: '待办事项',
+    description:
+      '待办办事项表待办办事项表待办办事项表待办办事项表待办办事项表待办办事项表待办办事项表待办办事项表待办办事项表待办办事项表待办办事项表待办办事项表',
+    avatar: logo
+  },
+  {
+    id: 2,
+    title: '工作进度',
+    description: '工作进度列表',
+    avatar: logo
+  },
+  {
+    id: 3,
+    title: '待办事项',
+    description: '待办事项列表',
+    avatar: logo
+  },
+  {
+    id: 4,
+    title: '待办事项',
+    description: '待办事项列表',
+    avatar: logo
+  }
+]
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="container mx-auto">
+    <column-list :list="testData"></column-list>
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
